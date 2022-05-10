@@ -9,13 +9,13 @@ dotenv.config('./.env');
 
 mongo();
 
-Post.findOne().populate({path: 'user coment', select: 'username firstname lastname photo -_id text user date'}).exec((err, post) => {
+Post.findOne().skip(32).populate({path: 'user coment', select: 'username firstname lastname photo -_id text user date'}).exec((err, post) => {
   if(err) {return console.log(err)}
   console.log(post)
 })
 
 
-/*
+
   Coment.find({post: post._id}).exec((err, coment) => {
     if(err) {return console.log(err)}
     const newcoment = []
@@ -35,4 +35,3 @@ Post.findOne().populate({path: 'user coment', select: 'username firstname lastna
     })
   })
 
-*/
