@@ -71,12 +71,31 @@ function makeComent(a, b) {
 
     coment.save((err, thecoment) => {
       if(err) {return console.log(err)}
-      console.log(thecoment)
+      console.log({thecoment})
+
+      const newArray = results.post.coment;
+      console.log(thecoment._id)
+      newArray.push(thecoment._id)
+
+      const editPost = new Post({
+        user: results.post.user,
+        text: results.post.text,
+        like: results.post.like,
+        date: results.post.date,
+        coment: newArray,
+        _id: results.post._id
+      })
+
+      Post.findByIdAndUpdate(results.post._id, editPost, {}, (err, endPost) => {
+        if(err) {return console.log(err)}
+        console.log({endPost})
+      })
     })
   })
 }
 
-
-for(let i = 0; i <= 150; i++) {
-
+for(let i = 0; i <= 400; i++) {
+  const random1 = Math.floor(Math.random() * 40)
+  const random2 = Math.floor(Math.random() * 99)
+  makeComent(random1, random2)
 }
