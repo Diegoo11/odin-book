@@ -14,7 +14,7 @@ Post.findOne().skip(32).populate({path: 'user coment', select: 'username firstna
   console.log(post)
 })
 
-
+/*
 
   Coment.find({post: post._id}).exec((err, coment) => {
     if(err) {return console.log(err)}
@@ -35,3 +35,4 @@ Post.findOne().skip(32).populate({path: 'user coment', select: 'username firstna
     })
   })
 
+*/
