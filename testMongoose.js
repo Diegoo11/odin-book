@@ -9,9 +9,10 @@ dotenv.config('./.env');
 
 mongo();
 
-Post.findOne().skip(32).populate({path: 'user coment', select: 'username firstname lastname photo -_id text user date'}).exec((err, post) => {
+User.find({facebookId: '3096063607323415'}).populate('friends').exec((err, user) => {
   if(err) {return console.log(err)}
-  console.log(post)
+  const peticiiones = ''
+  console.log(user)
 })
 
 /*
