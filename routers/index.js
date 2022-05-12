@@ -7,15 +7,15 @@ const likeController = require('../controllers/likeController');
 
 router.get('/', homeController.homeGET);
 
-router.post('/', homeController.homePOST);
+router.post('/', userExtractor, homeController.homePOST);
 
-router.get('/friend', userExtractor, homeController.friendGET);
+router.get('/friends', userExtractor, homeController.friendGET);
 
 router.get('/users', userExtractor, homeController.usersGET);
 
 router.post('/addFriend', userExtractor, homeController.acceptFriendPOST); //input hiden
 
-router.get('/requestsFriend', userExtractor, homeController.requestFriendGET);
+router.post('/requestsFriend', userExtractor, homeController.addFriendPOST);
 
 router.post('/acceptFriend', userExtractor, homeController.acceptFriendPOST); //input hiden
 
