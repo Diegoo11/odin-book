@@ -33,7 +33,7 @@ app.use((req, res, next) => {
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
-
+app.use(express.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter)
@@ -42,7 +42,7 @@ app.get('/auth/facebook',
   passport.authenticate('facebook'));
 
 app.get('/auth/facebook/fake',
-  passport.authenticate('facebook', { failureRedirect: '/sanpincho' }),
+  passport.authenticate('facebook', { failureRedirect: '/' }),
   function(req, res) {
     // Successful authentication, redirect home.
     res.redirect('/'); 
