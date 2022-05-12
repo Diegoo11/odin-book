@@ -8,20 +8,20 @@ exports.homeGET = (req, res, next) => {
     async.parallel({
       user: (callback) => {
         User.findById(req.user._id)
-        .populate({path: 'requests friends', select: 'username photo'})
+        .populate({path: 'response friends', select: 'username photo'})
         .exec(callback)
       },
       post: (callback) => {
-        Post.find().skip(15).sort('-date')
-        .populate({path: 'user coment', select: 'username photo -_id text user date'})
+        Post.find().sort({ 'date': -1 })
+        .populate({path: 'user coment', select: 'username photo text user date', populate: { path: 'user', strictPopulate: false}})
         .exec(callback)
       }
     }, (err, results) => {
       if(err) {return next(err)}
-      console.log(results)
       res.render('home', {results})
     })
   } else {
+    
     res.redirect('/login')
   }
 };
@@ -42,20 +42,23 @@ exports.homePOST = (req, res, next) => {
 }
 
 exports.friendGET = (req, res, next) => {
-  User.findById(req.user._id).select('friends').populate({path: 'friends', select: 'username photo'}).exec((err, userFriends) => {
+  User.findById(req.user._id).select('friends')
+  .populate({path: 'friends', select: 'username photo'})
+  .exec((err, userFriends) => {
     if(err) {return next(err)}
-    res.send(userFriends)
+    res.render('friends', {users: userFriends.friends})
   })
 }
 
 exports.usersGET = (req, res, next) => {
   User.find().select('username photo').exec((err, users) => {
     if(err) {return next(err)}
-    res.send(users)
+    res.render('users', {users})
   })
 }
 
 exports.addFriendPOST = (req, res, next) => {
+  console.log(req.body.id)
   async.parallel({
     userREQ: (callback) => {
       User.findById(req.user._id).exec(callback)
@@ -65,6 +68,7 @@ exports.addFriendPOST = (req, res, next) => {
     }
   }, (err, results) => {
     if(err) {return next(err)}
+    console.log(results)
     const newrequestsREQ = results.userREQ.requests;
     newrequestsREQ.push(req.body.id)
 
@@ -101,6 +105,7 @@ exports.addFriendPOST = (req, res, next) => {
     }, (err, results) => {
       if(err) {return next(err)}
       console.log('se mando solicitud de amistad')
+      res.redirect('/')
     })
   })
 };
@@ -165,6 +170,7 @@ exports.acceptFriendPOST = (req, res, next) => {
     }, (err, results) => {
       if(err) {return next(err)}
       console.log('se acepto la solicitud de amistad')
+      res.redirect('/')
     })
   })
 };
@@ -245,7 +251,7 @@ exports.postComentPOST = (req, res, next) => {
 
       Post.findByIdAndUpdate(post._id, newPost, {}, (err, thepost) => {
         if(err) {return next(err)}
-
+        res.redirect('/')
       })
     })
   })
