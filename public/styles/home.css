@@ -1,0 +1,243 @@
+header {
+  width: min(80vw, 1400px);
+  background-color: rgba(255, 255, 255, 0.781);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 30px auto;
+}
+
+.btnheader {
+  background-color: transparent;
+  border: 0;
+}
+
+.spanHeader {
+  font-size: 2rem;
+  color: #3a5186;
+  font-weight: bold;
+}
+.btns {
+  display: flex;
+  gap: 20px;
+}
+
+.div{
+  display: flex;
+  justify-content: center;
+}
+.left{
+  background-color: rgba(255, 255, 255, 0.781);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  width: 280px;
+}
+
+.titleLeftH1{
+  font-size: 2rem;
+  color: #3a5186;
+  font-weight: bold;
+  margin: 0;  
+  overflow: hidden; 
+  margin-bottom: 40px;
+}
+.cardUsers {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.445);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 0 5px 5px rgb(199, 199, 199);
+}
+.cardImg {
+  width: 50px;
+  border-radius: 50%;
+  margin: 5px;
+}
+.username {
+  font-size: 1.4rem;
+  color: rgb(58, 58, 58);
+  font-weight: bold;
+}
+
+.cardbtn {
+  padding: 10px 15px;
+  background-color: #3a5186;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  border-radius: 6px;
+}
+
+.body {
+  background-color: rgba(255, 255, 255, 0.781);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  margin: 0 50px;
+  gap: 30px;
+}
+
+.rigth {
+  background-color: rgba(255, 255, 255, 0.781);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  height: 70vh;
+}
+form{
+  background-color: rgba(255, 255, 255, 0.445);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 5px 5px rgb(199, 199, 199);
+}
+textarea {
+  resize: none;
+  background-color: rgba(255, 255, 255, 0.849);
+  padding: 10px;
+  width: 80%;
+  border: 0;
+  border-radius: 10px;
+  margin: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3rem;
+}
+
+.btnSubmit {
+  padding: 10px 15px;
+  background-color: #3a5186;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  width: 300px;
+  border: 0;
+  font-size: 1.3rem;
+  border-radius: 10px;
+  margin: 10px;
+}
+
+.thepost{
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.post{
+  background-color: rgba(255, 255, 255, 0.445);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px 5px rgb(199, 199, 199);
+}
+.postTitle {
+  display: flex;
+  justify-content: space-between;
+
+}
+.postImg {
+  width: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+.titleLeft{
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.postText {
+  margin: 20px 40px;
+}
+
+.coment {
+  background-color: rgba(255, 255, 255, 0.445);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  box-shadow: 0 0 5px 5px rgb(199, 199, 199);
+  width: 90%;
+}
+.comentImg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.boxComentary {
+  display: flex;
+  flex-direction: column;
+}
+.comentUsername{
+  font-weight: bold;
+}
+.userImg{
+  border-radius: 50%;
+  width: 85%;
+  margin: 10px auto;
+}
+.boxUserProfile {
+  background-color: rgba(255, 255, 255, 0.445);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 5px 5px rgb(199, 199, 199);
+  justify-content: center;
+  align-items: center;
+}
+.userRigth{
+  font-weight: bold;
+  color: rgb(36, 36, 36);
+  font-size: 1.4rem;
+}
+.btnRigth {
+  padding: 15px 25px;
+  background-color: #3a5186;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border: 0;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  margin: 10px;
+}
+.linkRigth{
+  color: white;
+}
+.btnAddFriend{
+  padding: 15px 25px;
+  background-color: #3a5186;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border: 0;
+  width: 80%;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  margin: 10px;
+  margin: 40px auto;
+}
