@@ -1,0 +1,107 @@
+extends layout
+
+block content
+  link(rel="stylesheet", href="/styles/home.css")
+  header 
+    span.spanHeader FakeFacebook 
+    .btns 
+      button.btn.btnheader
+        a(href="/") 
+          img(src="https://i.ibb.co/4Jhwxtx/friends.png", alt="friends")
+      button.btn.btnheader 
+        a(href="/") 
+          img(src="https://i.ibb.co/yFLvSXX/friends-1.png", alt="addfriends")
+      button.btn.btnheader 
+        a(href="/logout") 
+          img(src="https://i.ibb.co/qWMt1h2/logout.png", alt="logout")
+  .div 
+    .left 
+      h1.titleLeftH1 Friend requests
+      .cardUsers
+        .card 
+          img.cardImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
+          span.username Julio 
+          button.btn.cardbtn Accept
+        .card 
+          img.cardImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
+          span.username Julio 
+          button.btn.cardbtn Accept
+        .card 
+          img.cardImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
+          span.username Julio 
+          button.btn.cardbtn Accept
+    .body 
+      form(action="/", method="post") 
+        textarea#text(placeholder="En que estas pensando?" name="text", cols="30", rows="5" ) 
+        button.btnSubmit.btn(type="submit") Submit
+      
+      .thepost 
+        .post 
+          .postTitle 
+            .titleLeft
+              img.postImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
+              span.usernameTitle Julio 
+            span 10/04/2022
+          span.postText encompassing withdrawal Assimilated Massachusetts Chair AI array Creek capacitor bluetooth FTP Glens FTP recontextualize Operations Kiribati interface extensible quantify transmit
+        .coment
+          img.comentImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
+          .boxComentary 
+            span.comentUsername Julio
+            span.comentText seize Baby Berkshire Granite Computer state Accountability visionary Investor convergence whiteboard deploy Research Manager content
+
+        .coment
+          img.comentImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
+          .boxComentary 
+            span.comentUsername Julio
+            span.comentText seize Baby Berkshire Granite Computer state Accountability visionary Investor convergence whiteboard deploy Research Manager content
+
+      .thepost 
+        .post 
+          .postTitle 
+            .titleLeft
+              img.postImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
+              span.usernameTitle Julio 
+            span 10/04/2022
+          span.postText encompassing withdrawal Assimilated Massachusetts Chair AI array Creek capacitor bluetooth FTP Glens FTP recontextualize Operations Kiribati interface extensible quantify transmit
+        .coment
+          img.comentImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
+          .boxComentary 
+            span.comentUsername Julio
+            span.comentText seize Baby Berkshire Granite Computer state Accountability visionary Investor convergence whiteboard deploy Research Manager content
+
+        .coment
+          img.comentImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
+          .boxComentary 
+            span.comentUsername Julio
+            span.comentText seize Baby Berkshire Granite Computer state Accountability visionary Investor convergence whiteboard deploy Research Manager content
+
+      .thepost 
+        .post 
+          .postTitle 
+            .titleLeft
+              img.postImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
+              span.usernameTitle Julio 
+            span 10/04/2022
+          span.postText encompassing withdrawal Assimilated Massachusetts Chair AI array Creek capacitor bluetooth FTP Glens FTP recontextualize Operations Kiribati interface extensible quantify transmit
+        .coment
+          img.comentImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
+          .boxComentary 
+            span.comentUsername Julio
+            span.comentText seize Baby Berkshire Granite Computer state Accountability visionary Investor convergence whiteboard deploy Research Manager content
+
+        .coment
+          img.comentImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
+          .boxComentary 
+            span.comentUsername Julio
+            span.comentText seize Baby Berkshire Granite Computer state Accountability visionary Investor convergence whiteboard deploy Research Manager content
+
+
+    .rigth
+      .boxUserProfile 
+        img.userImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
+        span.userRigth Julio 
+        button.btn.btnRigth  
+          a.link.linkRigth(href="/logout") Logout
+
+      button.btn.btnAddFriend
+        a.link.linkRigth(href="") Add Friend

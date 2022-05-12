@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  link(rel="stylesheet", href="/styles/login.css")
+  .log
+    .login-title
+      span.login-logo FakeFacebook 
+      span.login-login Log in to your account
+    button.btn.btnLogin 
+      a.link.linkLogin.buttonLink(href="/auth/facebook/fake") 
+        img.logoGoogleImg(src="https://i.ibb.co/Lp90Rf9/facebook.png", alt="google")
+        span.btnTitle Log in with Google
