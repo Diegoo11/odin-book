@@ -3,6 +3,6 @@ exports.loginGET = (req, res, next) => {
   if(req.user) {
     res.redirect('/')
   } else {
-    res.send('modulo de inico de sesion')
+    res.render('login')
   }
 }
