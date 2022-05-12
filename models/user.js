@@ -7,8 +7,8 @@ const User = new Schema({
   firstname: {type: String, required: false},
   lastname: {type: String, required: false},
   photo: {type: String, default: 'https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.webp'},
-  requests: [{type: Schema.Types.ObjectId, ref: 'User'}],
-  response: [{type: Schema.Types.ObjectId, ref: 'User'}],
+  requests: [{type: Schema.Types.ObjectId, ref: 'User'}], // peticiones a otra persona
+  response: [{type: Schema.Types.ObjectId, ref: 'User'}], // peticione a ti mismo
   friends: [{type: Schema.Types.ObjectId, ref: 'User'}],
   facebookId: {type: String}
 })
