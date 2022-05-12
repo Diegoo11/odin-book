@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  link(rel="stylesheet", href="/styles/users.css")
+  header 
+    span.spanHeader 
+      a.link.colorLink(href="/") FakeFacebook / Friends 
+    .btns 
+      button.btn.btnheader
+        a(href="/") 
+          img(src="https://i.ibb.co/4Jhwxtx/friends.png", alt="friends")
+      button.btn.btnheader 
+        a(href="/users") 
+          img(src="https://i.ibb.co/yFLvSXX/friends-1.png", alt="addfriends")
+      button.btn.btnheader 
+        a(href="/logout") 
+          img(src="https://i.ibb.co/qWMt1h2/logout.png", alt="logout")
+  .div 
+    .body 
+      each user in users
+        .boxUser 
+          img.imgUserReq(src=user.photo, alt="userphoto")
+          span.spanNameUser= user.username 
+

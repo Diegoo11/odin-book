@@ -3,13 +3,14 @@ extends layout
 block content
   link(rel="stylesheet", href="/styles/home.css")
   header 
-    span.spanHeader FakeFacebook 
+    span.spanHeader 
+      a.link.colorLink(href="/") FakeFacebook 
     .btns 
       button.btn.btnheader
-        a(href="/") 
+        a(href="/friends") 
           img(src="https://i.ibb.co/4Jhwxtx/friends.png", alt="friends")
       button.btn.btnheader 
-        a(href="/") 
+        a(href="/users") 
           img(src="https://i.ibb.co/yFLvSXX/friends-1.png", alt="addfriends")
       button.btn.btnheader 
         a(href="/logout") 
@@ -18,90 +19,49 @@ block content
     .left 
       h1.titleLeftH1 Friend requests
       .cardUsers
-        .card 
-          img.cardImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
-          span.username Julio 
-          button.btn.cardbtn Accept
-        .card 
-          img.cardImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
-          span.username Julio 
-          button.btn.cardbtn Accept
-        .card 
-          img.cardImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
-          span.username Julio 
-          button.btn.cardbtn Accept
+        each response in results.user.response
+          form(action="/acceptFriend", method="post").card 
+            img.cardImg(src=response.photo, alt="userphoto")
+            span.username= response.username 
+            input(type="hidden", name="id" value=response._id)
+            button#acceptFriend(type = 'submit').btn.cardbtn Accept
     .body 
-      form(action="/", method="post") 
+      form#form(action="/", method="POST") 
         textarea#text(placeholder="En que estas pensando?" name="text", cols="30", rows="5" ) 
         button.btnSubmit.btn(type="submit") Submit
       
-      .thepost 
-        .post 
-          .postTitle 
-            .titleLeft
-              img.postImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
-              span.usernameTitle Julio 
-            span 10/04/2022
-          span.postText encompassing withdrawal Assimilated Massachusetts Chair AI array Creek capacitor bluetooth FTP Glens FTP recontextualize Operations Kiribati interface extensible quantify transmit
-        .coment
-          img.comentImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
-          .boxComentary 
-            span.comentUsername Julio
-            span.comentText seize Baby Berkshire Granite Computer state Accountability visionary Investor convergence whiteboard deploy Research Manager content
+      each post in results.post
+        .thepost 
+          .post 
+            .postTitle 
+              .titleLeft
+                img.postImg(src=post.user.photo, alt="userphoto")
+                span.usernameTitle= post.user.username
+              span= post.fecha
+            span.postText= post.text
+          
+          each coment in post.coment
+            .coment
+              img.comentImg(src=coment.user.photo, alt="userphoto")
+              .boxComentary 
+                span.comentUsername= coment.user.username
+                span.comentText= coment.text
 
-        .coment
-          img.comentImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
-          .boxComentary 
-            span.comentUsername Julio
-            span.comentText seize Baby Berkshire Granite Computer state Accountability visionary Investor convergence whiteboard deploy Research Manager content
-
-      .thepost 
-        .post 
-          .postTitle 
-            .titleLeft
-              img.postImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
-              span.usernameTitle Julio 
-            span 10/04/2022
-          span.postText encompassing withdrawal Assimilated Massachusetts Chair AI array Creek capacitor bluetooth FTP Glens FTP recontextualize Operations Kiribati interface extensible quantify transmit
-        .coment
-          img.comentImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
-          .boxComentary 
-            span.comentUsername Julio
-            span.comentText seize Baby Berkshire Granite Computer state Accountability visionary Investor convergence whiteboard deploy Research Manager content
-
-        .coment
-          img.comentImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
-          .boxComentary 
-            span.comentUsername Julio
-            span.comentText seize Baby Berkshire Granite Computer state Accountability visionary Investor convergence whiteboard deploy Research Manager content
-
-      .thepost 
-        .post 
-          .postTitle 
-            .titleLeft
-              img.postImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
-              span.usernameTitle Julio 
-            span 10/04/2022
-          span.postText encompassing withdrawal Assimilated Massachusetts Chair AI array Creek capacitor bluetooth FTP Glens FTP recontextualize Operations Kiribati interface extensible quantify transmit
-        .coment
-          img.comentImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
-          .boxComentary 
-            span.comentUsername Julio
-            span.comentText seize Baby Berkshire Granite Computer state Accountability visionary Investor convergence whiteboard deploy Research Manager content
-
-        .coment
-          img.comentImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
-          .boxComentary 
-            span.comentUsername Julio
-            span.comentText seize Baby Berkshire Granite Computer state Accountability visionary Investor convergence whiteboard deploy Research Manager content
-
+          .coment
+            img.comentImg(src=results.user.photo, alt="userphoto")
+            form(action="/addComent", method="post").boxComentary  
+              span.comentUsername= results.user.username
+              textarea#coment(name="text", cols="50", rows="2") 
+              input(type="hidden", name="postid" value= post._id)
+              button(type = 'submit').btn.comentSubmit Submit
 
     .rigth
       .boxUserProfile 
-        img.userImg(src="https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/119.jpg", alt="userphoto")
-        span.userRigth Julio 
+        img.userImg(src=results.user.photo, alt="userphoto")
+        span.userRigth= results.user.username
         button.btn.btnRigth  
           a.link.linkRigth(href="/logout") Logout
 
       button.btn.btnAddFriend
-        a.link.linkRigth(href="") Add Friend
+        a.link.linkRigth(href="/users") Add Friend
+  script(src="/scripts/home.js") 
