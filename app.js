@@ -5,6 +5,7 @@ const mongo = require('./mongo');
 const dotenv = require('dotenv');
 const verify = require('./passport')
 const indexRouter = require('./routers/index')
+const path = require('path')
 
 dotenv.config('./env');
 
@@ -24,6 +25,16 @@ const app = express()
 app.use(session({ secret: 'cats', resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  next();
+});
+
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'pug');
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter)
 
