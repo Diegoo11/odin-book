@@ -22,3 +22,9 @@ body{
 .link {
   text-decoration: none;
 }
+.link:hover{
+  text-decoration: underline;
+}
+.colorLink {
+  color: #3a5186;;
+}

@@ -37,6 +37,8 @@ header {
   flex-direction: column;
   height: 70vh;
   width: 280px;
+  position: sticky;
+  top: 50px;
 }
 
 .titleLeftH1{
@@ -68,7 +70,7 @@ header {
   margin: 5px;
 }
 .username {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: rgb(58, 58, 58);
   font-weight: bold;
 }
@@ -101,8 +103,10 @@ header {
   flex-direction: column;
   width: 280px;
   height: 70vh;
+  position: sticky;
+  top: 50px;
 }
-form{
+#form{
   background-color: rgba(255, 255, 255, 0.445);
   padding: 10px;
   border-radius: 10px;
@@ -142,6 +146,7 @@ textarea {
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  width: 100%;
 }
 
 .post{
@@ -151,6 +156,7 @@ textarea {
   display: flex;
   flex-direction: column;
   box-shadow: 0 0 5px 5px rgb(199, 199, 199);
+  width: 93%;
 }
 .postTitle {
   display: flex;
@@ -240,4 +246,19 @@ textarea {
   border-radius: 10px;
   margin: 10px;
   margin: 40px auto;
+}
+
+#coment {
+  width: 100%;
+}
+
+.comentSubmit{
+  padding: 10px 15px;
+  background-color: #3a5186;
+  color: white;
+  font-weight: bold;
+  border: 0;
+  border-radius: 6px;
+  margin: 10px;
+  width: 90px;
 }

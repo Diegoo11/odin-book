@@ -1,0 +1,77 @@
+header {
+  width: min(80vw, 1400px);
+  background-color: rgba(255, 255, 255, 0.781);
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 30px auto;
+}
+
+.btnheader {
+  background-color: transparent;
+  border: 0;
+}
+
+.spanHeader {
+  font-size: 2rem;
+  color: #3a5186;
+  font-weight: bold;
+}
+.btns {
+  display: flex;
+  gap: 20px;
+}
+
+.div{
+  display: flex;
+  justify-content: center;
+}
+
+.body {
+  background-color: rgba(255, 255, 255, 0.781);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 45vw;
+  margin: 0 50px;
+  gap: 30px;
+  justify-content: space-around;
+}
+
+.boxUser {
+  width: 200px;
+  background-color: rgba(255, 255, 255, 0.445);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px 5px rgb(199, 199, 199);
+  gap: 15px;
+}
+
+.imgUserReq {
+  width: 170px;
+  border-radius: 10px;
+  margin: 15px 15px 0 15px;
+}
+
+.spanNameUser{
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.btnUserReq {
+  padding: 10px 20px;
+  background-color: #3a5186;
+  border: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px;
+}
